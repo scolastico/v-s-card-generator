@@ -20,7 +20,7 @@ jobs:
         run: |
           npm i -g pnpm
           pnpm i
-          pnpm generate
+          NUXT_APP_BASE_URL=/v-s-card-generator/ pnpm generate
           touch .output/public/.nojekyll
 
       - name: Deploy 🚀

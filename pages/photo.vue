@@ -9,13 +9,13 @@
           padding: cSize.w / 86 * 2 + 'px',
         }"
         ref="container"
-        class="from-slate-500 to-slate-700 bg-gradient-to-br font-bold text-white flex flex-col font-v font-thin bg-[url('/bg.png')] bg-cover bg-center"
+        class="from-slate-500 to-slate-700 bg-gradient-to-br font-bold text-white flex flex-col font-v font-thin bg-[url('./bg.png')] bg-cover bg-center"
       >
         <div class="flex items-center justify-center">
           <div class="bg-white p-[3%] pb-0 -rotate-12 scale-75 w-[90%]">
             <img :src="data.img" alt="" class="w-full aspect-square object-cover" />
             <p
-              class="text-right text-black mt-4 -mb-2"
+              class="text-right text-sky-300 mt-4 -mb-2"
               :style="{fontSize: cSize.w / 86 * 5 + 'px'}"
             >{{ ' *'.repeat(data.stars) }}</p>
           </div>
@@ -151,7 +151,7 @@ const data = ref<any>({
   acceleration: 0,
   weight: 0,
   title: 'Car Name',
-  img: '/example.png',
+  img: './example.png',
 });
 const cSize = ref({w: 0, h: 0});
 const scale = ref(0.20);
@@ -199,7 +199,7 @@ async function saveObj() {
 
 @font-face {
   font-family: 'CustomFont';
-  src: url('/v-font.ttf') format('truetype');
+  src: url('./v-font.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
