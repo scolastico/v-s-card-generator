@@ -83,44 +83,38 @@
         >
         <label for="speed">Top Speed:</label>
         <input
-          type="number"
           id="speed"
-          v-model.number="data.speed"
+          v-model="data.speed"
           class="input-box"
         >
         <label for="hp">Horsepower:</label>
         <input
-          type="number"
           id="hp"
-          v-model.number="data.hp"
+          v-model="data.hp"
           class="input-box"
         >
         <label for="engine">Engine:</label>
         <input
-          type="number"
           id="engine"
-          v-model.number="data.engine"
+          v-model="data.engine"
           class="input-box"
         >
         <label for="drivetrain">Drivetrain:</label>
         <input
-          type="number"
           id="drivetrain"
-          v-model.number="data.drivetrain"
+          v-model="data.drivetrain"
           class="input-box"
         >
         <label for="acceleration">Acceleration:</label>
         <input
-          type="number"
           id="acceleration"
-          v-model.number="data.acceleration"
+          v-model="data.acceleration"
           class="input-box"
         >
         <label for="weight">Weight:</label>
         <input
-          type="number"
           id="weight"
-          v-model.number="data.weight"
+          v-model="data.weight"
           class="input-box"
         >
         <label for="img">Image:</label>
