@@ -7,9 +7,10 @@
           width: cSize.h + 'px',
           fontSize: cSize.w / 86 * 1.8 + 'px',
           padding: cSize.w / 86 * 2 + 'px',
+          backgroundImage: `url(${baseUrl}bg.png)`,
         }"
         ref="container"
-        class="from-slate-500 to-slate-700 bg-gradient-to-br font-bold text-white flex flex-col font-v font-thin bg-[url('./bg.png')] bg-cover bg-center"
+        class="from-slate-500 to-slate-700 bg-gradient-to-br font-bold text-white flex flex-col font-v font-thin bg-cover bg-center"
       >
         <div class="flex items-center justify-center">
           <div class="bg-white p-[3%] pb-0 -rotate-12 scale-75 w-[90%]">
@@ -141,6 +142,21 @@
 import { toPng } from 'html-to-image';
 import { addMetadataFromBase64DataURI } from 'meta-png';
 
+const config = useRuntimeConfig();
+const baseUrl = config.public.NUXT_APP_BASE_URL;
+
+onMounted(() => {
+  const style = document.createElement('style');
+  style.textContent = `
+    @font-face {
+      font-family: 'CustomFont';
+      src: url('${baseUrl}v-font.ttf') format('truetype');
+      font-weight: normal;
+      font-style: normal;
+    }`;
+  document.head.appendChild(style);
+});
+
 const container = ref(null) as any as Ref<HTMLElement>;
 const data = ref<any>({
   stars: 5,
@@ -151,7 +167,7 @@ const data = ref<any>({
   acceleration: 0,
   weight: 0,
   title: 'Car Name',
-  img: './example.png',
+  img: `${baseUrl}example.png`,
 });
 const cSize = ref({w: 0, h: 0});
 const scale = ref(0.20);
@@ -195,13 +211,6 @@ async function saveObj() {
 <style>
 .input-box {
   @apply rounded-s px-2 py-1;
-}
-
-@font-face {
-  font-family: 'CustomFont';
-  src: url('./v-font.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
 }
 
 .font-v {
