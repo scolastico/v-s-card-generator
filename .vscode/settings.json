@@ -1,0 +1,11 @@
+{
+  "cSpell.words": [
+    "lucide",
+    "Nuxt"
+  ],
+  "css.customData": [
+    ".vscode/tailwind.json"
+  ],
+  "editor.indentSize": 2,
+  "editor.tabSize": 2,
+}
